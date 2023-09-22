@@ -1,0 +1,9 @@
+.DS_Store
+.devcontainer/
+.vscode/
+__pycache__/
+credentials/
+*.pyc
+
+config/env.ini
+src/repo/

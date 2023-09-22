@@ -1,0 +1,24 @@
+#!/usr/bin/env python
+
+import os
+import sys
+
+
+src_path = os.path.abspath(os.path.join(os.path.dirname(os.path.realpath(__file__)), os.pardir, os.pardir))
+sys.path.append(src_path)
+
+dir_list = os.listdir(src_path)
+for item in dir_list:
+    path = src_path + "/" + item
+    if not os.path.isdir(path):
+        continue
+    if item.startswith("."):
+        continue
+    if path in sys.path:
+        continue
+    sys.path.append(path)
+
+
+from executor.starter.main import Main
+
+Main().run()
